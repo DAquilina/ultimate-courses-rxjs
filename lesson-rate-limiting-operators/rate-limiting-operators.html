@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Rate-Limiting Operators</p>
+            </div>
+        </header>
+        <div id="app">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <p>
+                <label for="debounceTime">debounceTime(1000)</label>
+
+                <br />
+
+                <input type="text" id="debounceTime" />
+
+                <div>
+                    Last Value: <pre id="debounceTimeValue"></pre>
+                </div>
+            </p>
+
+            <hr />
+
+            <p>
+                <label for="debounce">debounce (uses the provided value as the next debounce interval)</label>
+
+                <br />
+
+                <input type="number" id="debounce" />
+
+                <div>
+                    Last Value: <pre id="debounceValue"></pre>
+                </div>
+            </p>
+
+            <hr />
+
+            <p>
+                <label for="throttleTime">throttleTime(1000)</label>
+
+                <br />
+
+                <input type="text" id="throttleTime" />
+
+                <div>
+                    Last Value: <pre id="throttleTimeValue"></pre>
+                </div>
+            </p>
+
+            <hr />
+
+            <p>
+                <label for="sampleTime">sampleTime(1000)</label>
+
+                <br />
+
+                <input type="text" id="sampleTime" />
+
+                <div>
+                    Last Value: <pre id="sampleTimeValue"></pre>
+                </div>
+            </p>
+
+            <hr />
+
+            <p>
+                <label for="auditTime">auditTime(1000)</label>
+
+                <br />
+
+                <input type="text" id="auditTime" />
+
+                <div>
+                    Last Value: <pre id="auditTimeValue"></pre>
+                </div>
+            </p>
+        </div>
+
+        <script type="module" src="./rate-limiting-operators.js"></script>
+    </body>
+</html>

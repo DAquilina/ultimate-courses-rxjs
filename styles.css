@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    color: #545e6f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #f1f2f5;
+    padding-bottom: 1rem;
+}
+
+h2 {
+    margin: 30px auto;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 30px;
+    padding: 0;
+}
+
+ul li {
+    margin: 1rem 0;
+}
+
+.header {
+    background: #451771;
+    padding: 20px 25px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-ultimate {
+    height: 30px;
+    width: 30px;
+    background: url('https://drive.google.com/uc?export=view&id=1gjKk20q5MgptDtuXqc0gAPFcSmkcHJZA') no-repeat center center;
+    background-size: contain;
+}
+
+.logo-name {
+    margin: 0 0 0 14px;
+    line-height: 30px;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.header-logo img {
+    height: 100%;
+}
+
+.scroll-progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    background-color: #be2f42;
+    height: 4px;
+    width: 0%;
+}
+
+.text-large {
+    font-size: 14px;
+}
+
+.text-larger {
+    font-size: 40px;
+}
+
+#app {
+    margin: 0 auto;
+    max-width: 600px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#app h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+#app h1:before {
+    content: '';
+    background: url('https://drive.google.com/uc?export=view&id=1Dbmt6tlQ-fvMf6VCAGEjr5jZewymhdUE') no-repeat center center;
+    background-size: contain;
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+    margin-right: 14px;
+    position: relative;
+    top: 6px;
+}
+
+/* Lab 2: countdown timer */
+.lab-02 #timer {
+    opacity: 1.0;
+
+    -webkit-transition: opacity 0.5s ease-out;
+                    transition: opacity 0.5s ease-out;
+}
+
+.lab-02 #timer.fade {
+    opacity: 0.0;
+}
+
+.lab-02 #timer-message {
+    color: red;
+    line-height: 40px;
+}
+
+.lab-02 .controls-wrapper {
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    column-gap: 5px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px auto;
+    padding: 5px;
+    width: 65px;
+}
+
+.lab-02 .controls-wrapper .control-button {
+    display: inline-block;
+    width: 25px;
+}
+
+.lab-02 .controls-wrapper .control-button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.lab-02 .controls-wrapper .control-button img {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+/* Lab 03 - doggos! */
+.lab-03 .controls-wrapper {
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    column-gap: 5px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px auto;
+    padding: 5px;
+    width: 65px;
+}
+
+.lab-03 .controls-wrapper .next-button,
+.lab-03 .controls-wrapper .state-button {
+    display: inline-block;
+    width: 25px;
+}
+
+.lab-03 .controls-wrapper .control-button img {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+}
+
+.lab-03 .image-wrapper {
+    text-align: center;
+}
+
+.lab-03 .image-wrapper img {
+    margin: 0 auto;
+    max-height: 600px;
+    max-width: 600px;
+}
+
+/* Lab 04 - Mortgage Calculator */
+.lab-04 label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lab-04 .row {
+    display: flex;
+    margin: 2rem 0;
+}
+
+.lab-04 .row .col {
+    flex: 1 1 auto;
+}
+
+.lab-04 .row .col.left {
+    text-align: left;
+}
+
+.lab-04 .row .col.right {
+    text-align: right;
+}
+
+.lab-04 .payment {
+    font-size: 25px;
+    font-weight: 500;
+}

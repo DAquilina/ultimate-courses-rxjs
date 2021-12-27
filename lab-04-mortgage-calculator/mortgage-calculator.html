@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Mortgage Calculator</p>
+            </div>
+        </header>
+        <div id="app" class="lab-04">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <div class="row">
+                <div class="col left">
+                    <label for="principle">Mortgage Amount ($)</label>
+                </div>
+
+                <div class="col right">
+                    <input type="number" id="principle" type="number" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col left">
+                    <label for="interest-rate">Interest Rate (%)</label>
+                </div>
+
+                <div class="col right">
+                    <input type="number" id="interest-rate" type="number" min="0" step="0.01" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col left">
+                    <label for="ammortization-period">Ammortization Period (months)</label>
+                </div>
+
+                <div class="col right">
+                    <input type="number" id="ammortization-period" type="number" min="0" max="360" step="1" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col payment">
+                    Expected Monthly Payment: <span id="payment-value">--</span>
+                </div>
+            </div>
+        </div>
+
+        <script type="module" src="./mortgage-calculator.js"></script>
+    </body>
+</html>

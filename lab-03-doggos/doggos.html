@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Doggos!</p>
+            </div>
+        </header>
+
+        <div id="app" class="lab-03">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <div class="controls-wrapper">
+                <div class="state-button">
+                    <a id="play" class="control-button"><img src="assets/play-buton-svgrepo-com.svg" alt="Play slideshow" /></a>
+                    <a id="pause" class="control-button" style="display: none"><img src="assets/pause-button-svgrepo-com.svg" alt="Pause slideshow" /></a>
+                </div>
+
+                <div class="next-button">
+                    <a id="next" class="control-button"><img src="assets/next-svgrepo-com.svg" alt="Next doggo!" /></a>
+                </div>
+            </div>
+
+            <div class="image-wrapper">
+                <img id="image-element" alt="Doggo!" style="display: none" />
+            </div>
+        </div>
+
+        <script type="module" src="./doggos.js"></script>
+    </body>
+</html>
