@@ -213,3 +213,59 @@ ul li {
     font-size: 25px;
     font-weight: 500;
 }
+
+/* Lab 05 - Loading State */
+
+.lab-05 #overlay {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+
+    background-color: #451771;
+    color: white;
+    font-size: 2rem;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9001;
+
+    /* alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* animation */
+    transition: all 0.5s ease-out;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    animation-name: fadeOutUp;
+}
+
+.lab-05 #overlay.open {
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
