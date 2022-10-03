@@ -39,13 +39,19 @@ subscriptions.add(
     stream.subscribe(observer)
 );
 
-subscriptions.add(
-    stream.subscribe(observer)
-);
+setTimeout(() => {
 
-subscriptions.add(
-    stream.subscribe(observer)
-);
+    subscriptions.add(
+        stream.subscribe(observer)
+    );
+}, 1000);
+
+setTimeout(() => {
+
+    subscriptions.add(
+        stream.subscribe(observer)
+    );
+}, 2000);
 
 setTimeout(() => {
 

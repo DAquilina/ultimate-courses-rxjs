@@ -1,7 +1,7 @@
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 
-const loadingSubject = new Subject();
+const loadingSubject = new BehaviorSubject(false);
 
 
 export const loadingService = {

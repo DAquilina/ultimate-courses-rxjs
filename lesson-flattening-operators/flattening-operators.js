@@ -25,11 +25,11 @@ const subscriptions = new Subscription();
 subscriptions.add(
     mouseDown.pipe(
         concatMap(() => {
-    
+
             return intervalStream;
         }),
         scan((accumulator, current) => {
-    
+
             return (accumulator + 0.1);
         }, concatMapTotal)
     ).subscribe((value) => {
@@ -43,11 +43,11 @@ subscriptions.add(
 subscriptions.add(
     mouseDown.pipe(
         exhaustMap(() => {
-    
+
             return intervalStream;
         }),
         scan((accumulator, current) => {
-    
+
             return (accumulator + 0.1);
         }, exhaustMapTotal)
     ).subscribe((value) => {
@@ -61,11 +61,11 @@ subscriptions.add(
 subscriptions.add(
     mouseDown.pipe(
         mergeMap(() => {
-    
+
             return intervalStream;
         }),
         scan((accumulator, current) => {
-    
+
             return (accumulator + 0.1);
         }, mergeMapTotal)
     ).subscribe((value) => {
@@ -79,11 +79,11 @@ subscriptions.add(
 subscriptions.add(
     mouseDown.pipe(
         switchMap(() => {
-    
+
             return intervalStream;
         }),
         scan((accumulator, current) => {
-    
+
             return (accumulator + 0.1);
         }, switchMapTotal)
     ).subscribe((value) => {

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Loading State</p>
+            </div>
+        </header>
+
+        <div id="app" class="lab-05">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <p>
+                In this lab, we created an application store that can store state values in an application-wide
+                context.
+            </p>
+
+            <hr />
+
+            <p>
+                <button type="button" id="getRandomUser">Get a User</button>
+                <button type="button" id="toggleIsAuthenticated">Log In or Out</button>
+            </p>
+
+            <p>
+                <b>User:</b>
+
+                <span id="user"></span>
+            </p>
+
+            <p>
+                <b>isAuthenticated:</b>
+
+                <span id="isAuthenticated"></span>
+            </p>
+        </div>
+
+        <script type="module" src="./app-store-model.js"></script>
+        <script type="module" src="./app-store.js"></script>
+    </body>
+</html>

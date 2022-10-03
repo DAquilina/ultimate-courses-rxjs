@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "parcel": "^2.0.1",
+    "parcel": "^2.7.0",
     "parcel-bundler": "^1.12.3",
     "rxjs": "^6.6.7"
   },
-  "devDependencies": {},
   "scripts": {
     "build": "parcel build index.html --log-level warn",
     "start": "parcel index.html"
