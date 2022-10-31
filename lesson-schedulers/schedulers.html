@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Schedulers</p>
+            </div>
+        </header>
+        <div id="app">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <h2>
+                Event loop
+            </h2>
+
+            <p>
+                1. <strong>Synchronous statements</strong>
+            </p>
+
+            <p>
+                2. <strong>Microtask Queue (promises, queueMicrotask, asapScheduler)</strong> has the
+                highest priority of the asynchronous events, but will execute as a blocking operation
+                (including other microtasks that are added while the current task is running).
+            </p>
+
+            <p>
+                3. <strong>Browser Repaint (requestAnimationFrame, animationFrameScheduler)</strong>:
+                will execute whenever the browser repaints, up to 60 times per second
+            </p>
+
+            <p>
+                4. <strong>Async Tasks (setTimeout, asyncScheduler)</strong>
+            </p>
+
+            <p>
+                5: <strong>Sync Queue (queueScheduler)</strong>: executes the queued task synchronously when
+                the outer task completes (see
+
+                <a href="/lesson-queue-scheduler/queue-scheduler.html">Queue Scheduler</a>
+
+                for example)
+            </p>
+
+            <p>
+                See console for results of observeOn vs subscribeOn with the asyncScheduler
+            </p>
+
+            <h2>Schedulers in Action</h2>
+
+            <p>
+                <button id="asyncSchedulerButton">Async Scheduler</button>
+                <button id="asapSchedulerButton">ASAP Scheduler</button>
+                <button id="animationFrameSchedulerButton">Animation Frame Scheduler</button>
+            </p>
+
+            <p id="schedulerResultContainer"></p>
+        </div>
+
+        <script type="module" src="./schedulers.js"></script>
+    </body>
+</html>

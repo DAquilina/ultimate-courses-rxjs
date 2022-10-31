@@ -9,7 +9,7 @@ body {
 
 html {
     font-family: 'Roboto', sans-serif;
-    font-size: 62.5%;
+    font-size: 14px;
     font-weight: normal;
     letter-spacing: 0.2px;
     color: #545e6f;
@@ -91,7 +91,7 @@ ul li {
 
 #app h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 #app h1:before {

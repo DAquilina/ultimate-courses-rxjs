@@ -13,12 +13,12 @@ const sampleTimeValue = document.getElementById("sampleTimeValue");
 const throttleTimeInput = document.getElementById("throttleTime");
 const throttleTimeValue = document.getElementById("throttleTimeValue");
 
-const scubscriptions = new Subscription();
+const subscriptions = new Subscription();
 
 let lastDebounceValue = 1;
 
 
-scubscriptions.add(
+subscriptions.add(
     fromEvent(auditTimeInput, "keyup").pipe(
         auditTime(1000),
         pluck("target", "value"),
@@ -29,7 +29,7 @@ scubscriptions.add(
     })
 );
 
-scubscriptions.add(
+subscriptions.add(
     fromEvent(debounceInput, "keyup").pipe(
         debounce(() => {
 
@@ -44,7 +44,7 @@ scubscriptions.add(
     })
 );
 
-scubscriptions.add(
+subscriptions.add(
     fromEvent(debounceTimeInput, "keyup").pipe(
         debounceTime(1000),
         pluck("target", "value"),
@@ -55,7 +55,7 @@ scubscriptions.add(
     })
 );
 
-scubscriptions.add(
+subscriptions.add(
     fromEvent(sampleTimeInput, "keyup").pipe(
         sampleTime(1000),
         pluck("target", "value"),
@@ -66,7 +66,7 @@ scubscriptions.add(
     })
 );
 
-scubscriptions.add(
+subscriptions.add(
     fromEvent(throttleTimeInput, "keyup").pipe(
         throttleTime(1000),
         pluck("target", "value"),

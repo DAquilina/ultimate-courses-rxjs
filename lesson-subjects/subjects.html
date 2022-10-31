@@ -21,15 +21,43 @@
                 <button id="addSubscriptionButton">Add Subscriptions</button>
             </p>
 
+            <p>
+                <button id="completeSourceButton">Complete Source</button>
+            </p>
+
             <h2>Subject</h2>
 
             <div id="subjectSubscriptionContainer"></div>
 
             <h2>Behavior Subject</h2>
 
-            <p>Note: Late subscribers to a BehaviorSubject will immediately receive the last value emitted.</p>
+            <p>Late subscribers to a BehaviorSubject will immediately receive the last value emitted.</p>
 
             <div id="behaviorSubjectSubscriptionContainer"></div>
+
+            <h2>Replay Subject</h2>
+
+            <p>
+                Late subscribers to a ReplaySubject will immediately receive the last N values emitted.
+            </p>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;If N is not provided, it will immediately receive all prior values.
+            </p>
+
+            <h3>N = 3</h3>
+
+            <div id="replaySubjectNSubscriptionContainer"></div>
+
+            <h3>N = undefined</h3>
+
+            <div id="replaySubjectSubscriptionContainer"></div>
+
+            <h2>Async Subject</h2>
+
+            <p>Subscribers will only receive the last value emitted when the source completes</p>
+
+            <div id="asyncSubjectSubscriptionContainer"></div>
         </div>
 
         <script type="module" src="./subjects.js"></script>
