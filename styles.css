@@ -22,8 +22,23 @@ body {
     padding-bottom: 1rem;
 }
 
+code {
+    font-family: monospace;
+    font-size: 80%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
 h2 {
     margin: 30px auto;
+}
+
+pre {
+    border: 1px solid #999;
+    border-radius: 5px;
+    overflow-x: scroll;
+    padding: 1rem;
+    text-align: left;
 }
 
 ul {

@@ -29,6 +29,8 @@ const observer = (streamLabel) => {
 const stream = interval(1000).pipe(
     finalize(() => {
 
+        // NOTE: finalize will run whenever the stream terminate, either by completing, through unsubscription,
+        //       or when an error is thrown
         console.log("Source completed");
     })
 );

@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <title>RxJS Starter - Ultimate Courses</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo">
+                <div class="logo-ultimate"></div>
+                <p class="logo-name">Ultimate Courses<span>&trade;</span> - Marble Testing</p>
+            </div>
+        </header>
+        <div id="app">
+            <h1>Ultimate RxJS</h1>
+
+            <p>
+                <a href="/index.html">Back</a>
+            </p>
+
+            <p>
+                Marble testing is a way of executing a particular stream in a discrete way.
+            </p>
+
+            <h2>ASCII Representation</h2>
+
+            <p>
+                <strong>-</strong>: virtual frame
+            </p>
+
+            <p>
+                <strong>[a-z0-9]</strong>: emitted values
+            </p>
+
+            <p>
+                <strong>#</strong>: error
+            </p>
+
+            <p>
+                <strong>()</strong>: synchronous grouping
+            </p>
+
+            <p>
+                <strong>|</strong>: marks a stream's completion
+            </p>
+
+            <h2>Writing tests</h2>
+
+            <p>
+                <pre>
+                    <code>
+import { TestScheduler } from "rxjs/testing";
+
+beforeEach(function () {
+
+    this.testScheduler = new TestScheduler((actual, expected) => {
+
+        expect(actual).toEqual(expected);
+    });
+});
+
+
+it("should double the incoming numeric values and emit NaN for non-numeric values", function() {
+
+    this.testScheduler.run((helpers) => {
+
+        const { cold, expectObservable } = helpers;
+
+        this.source$ = cold("-(abc)--d--e", { a: 1, b: 2, c: 3, d: "a", e: undefined });
+        this.final$ = this.source$.pipe(
+            map((value) => {
+
+                return (2 * value);
+            })
+        );
+
+        expectObservable(this.final$).toBe("-(abc)--d--e", { a: 2, b: 4, c: 6, d: NaN, e: NaN });
+    });
+});
+
+
+it("should correctly handle errors", function() {
+
+    this.testScheduler.run((helpers) => {
+
+        const { expectObservable } = helpers;
+
+        this.source$ = of({ value: "test" }, undefined).pipe(
+            map((input) => {
+
+                return input.value;
+            }),
+            catchError(() => {
+
+                throw "Invalid value";
+            })
+        );
+
+        this.expected = "(a#)";
+
+        expectObservable(this.source$).toBe(expected, { a: "test" }, "Invalid value");
+    });
+});
+
+
+it("should subscribe and unsubscribe at the correct time", function() {
+
+    this.testScheduler.run((helpers) => {
+
+        const { cold, expectObservable, expectSubscriptions } = helpers;
+
+        this.source1$ = cold("-a---b-|");
+        this.source2$ = cold("-c---d-|");
+        this.final$ = concat(this.source1$, this.source2$);
+
+        this.expected = "-a---b--c---d-";
+        this.source1SubscriptionPattern = "^------!";
+        this.source2SubscriptionPattern = "-------^------!";
+
+        expectObservable(this.final$).toBe(expected);
+        expectSubscriptions(this.source1$.subscriptions).toBe(this.source1SubscriptionPattern);
+        expectSubscriptions(this.source2$.subscriptions).toBe(this.source2SubscriptionPattern);
+    });
+});
+
+
+it("should correctly ingest the incoming values when subscribing late", () => {
+
+    this.testScheduler.run((helpers) => {
+
+        const { hot, expectObservable } = helpers;
+
+        this.source$ = hot("-a-b-^-c");
+        this.final$ = this.source$.pipe(take(1));
+
+        this.expected = "--(c|)";
+
+        expectObservable(this.final$).toBe(expected);
+    });
+});
+
+
+it("should correctly handle time progression", () => {
+
+    this.testScheduler.run((helpers) => {
+
+        const { expectObservable } = helpers;
+
+        // NOTE: You can also use real observables in a testing context
+        this.source$ = from([1, 2, 3, 4, 5]);
+        this.final$ = this.source$.pipe(delay(200));
+
+        this.expected = "200ms(abcde|)";
+
+        expectObservable(this.final$).toBe(expected, { a: 1, b: 2, c: 3, d: 4, e: 5 });
+    });
+});
+
+
+it("should unsubscribe from long-running observables", () => {
+
+    this.testScheduler.run((helpers) => {
+
+        const { expectObservable } = helpers;
+
+        this.source$ = interval(1000).pipe(
+            map((value) => {
+
+                return `${value} seconds`;
+            })
+        );
+
+        this.expected = "1s a 999ms b 999ms c";
+        this.unsubscriptionPattern = "4s !";
+
+        expectObservable(this.source$, this.unsubscriptionPattern).toBe(expected, { a: "1 seconds", b: "2 seconds", c: "3 seconds" });
+    });
+});
+                    </code>
+                </pre>
+            </p>
+        </div>
+
+        <script type="module" src="./marble-testing.js"></script>
+    </body>
+</html>
