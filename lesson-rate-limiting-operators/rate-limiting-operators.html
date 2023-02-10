@@ -20,7 +20,9 @@
             <p>
                 <label for="debounceTime">debounceTime(1000)</label>
 
-                <br />
+                <p>
+                    Discards emitted values that take less than the specified time between inputs.
+                </p>
 
                 <input type="text" id="debounceTime" />
 
@@ -34,7 +36,9 @@
             <p>
                 <label for="debounce">debounce (uses the provided value as the next debounce interval)</label>
 
-                <br />
+                <p>
+                    As debounceTime, but fuelled by an observable that sets the input's value as the debounce interval for the next set of events.
+                </p>
 
                 <input type="number" id="debounce" />
 
@@ -48,7 +52,9 @@
             <p>
                 <label for="throttleTime">throttleTime(1000)</label>
 
-                <br />
+                <p>
+                    Accepts the input value, then stops accepting inputs for the specified throttle period.
+                </p>
 
                 <input type="text" id="throttleTime" />
 
@@ -62,7 +68,9 @@
             <p>
                 <label for="sampleTime">sampleTime(1000)</label>
 
-                <br />
+                <p>
+                    Polls for inputs on a set interval
+                </p>
 
                 <input type="text" id="sampleTime" />
 
@@ -76,7 +84,9 @@
             <p>
                 <label for="auditTime">auditTime(1000)</label>
 
-                <br />
+                <p>
+                    Starts a timer when input is received, then emits the current value after the interval expires. If an interval passes with no new inputs, the interval resets.
+                </p>
 
                 <input type="text" id="auditTime" />
 

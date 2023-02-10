@@ -26,16 +26,16 @@ subscriptions.add(
 
             return !accumulator;
         }),
-        take((2 * START_VALUE) + 1),
+        take((2 * START_VALUE) - 1),
         takeUntil(abortStream)
     ).subscribe({
         next: (on) => {
 
             if (on) {
-                timerElement.classList = "text-larger";
+                timerElement.classList = "text-larger fade";
             }
             else {
-                timerElement.classList = "text-larger fade";
+                timerElement.classList = "text-larger";
             }
         }
     })
@@ -69,8 +69,9 @@ subscriptions.add(
 
         timerElement.innerText = value.toString();
 
-        if (value == 0) {
+        if (value === 0) {
             launched = true;
+            timerElement.classList = "text-larger";
             messageElement.innerText = "Liftoff!";
             abortButton.style.display = "none";
         }
@@ -83,8 +84,9 @@ subscriptions.add(
 subscriptions.add(
     abortStream.subscribe((event) => {
 
+        timerElement.classList = "text-larger";
+
         if (!launched) {
-            timerElement.classList = "text-larger fade";
             messageElement.innerText = "ABORTED";
             abortButton.style.display = "none";
         }

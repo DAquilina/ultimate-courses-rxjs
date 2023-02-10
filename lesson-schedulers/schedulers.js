@@ -91,13 +91,13 @@ const basicSource = range(1, 5);
 const heavySource = range(1, 20000).pipe(
     finalize(() => {
 
-        asyncSchedulerButton.disabled = false;
-        asapSchedulerButton.disabled = false;
-        animationFrameSchedulerButton.disabled = false;
-
         setTimeout(() => {
 
             outputContainer.innerText = "";
+
+            asyncSchedulerButton.disabled = false;
+            asapSchedulerButton.disabled = false;
+            animationFrameSchedulerButton.disabled = false;
         }, 3000);
     })
 );

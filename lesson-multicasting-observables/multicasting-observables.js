@@ -1,5 +1,5 @@
 import { interval, Subscription } from "rxjs";
-import { finalize, share, shareReplay, tap } from "rxjs/operators";
+import { finalize, share, shareReplay } from "rxjs/operators";
 
 const subscriptions = new Subscription();
 

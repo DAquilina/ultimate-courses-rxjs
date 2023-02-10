@@ -46,9 +46,7 @@
             <h2>Writing tests</h2>
 
             <p>
-                <pre>
-                    <code>
-import { TestScheduler } from "rxjs/testing";
+                <pre><code>import { TestScheduler } from "rxjs/testing";
 
 beforeEach(function () {
 
@@ -174,9 +172,7 @@ it("should unsubscribe from long-running observables", () => {
 
         expectObservable(this.source$, this.unsubscriptionPattern).toBe(expected, { a: "1 seconds", b: "2 seconds", c: "3 seconds" });
     });
-});
-                    </code>
-                </pre>
+});</code></pre>
             </p>
         </div>
 
