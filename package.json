@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "parcel": "^2.7.0",
+    "parcel": "^2.8.3",
     "parcel-bundler": "^1.12.3",
     "rxjs": "^6.6.7"
   },
@@ -11,6 +11,6 @@
     "build": "parcel build index.html --log-level warn",
     "start": "parcel index.html"
   },
-  "author": "Brian Troncone, Ultimate Courses",
+  "author": "Brian Troncone, Ultimate Courses, Dominic Aquilina",
   "license": "MIT"
 }
